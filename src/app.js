@@ -48,8 +48,7 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    let address = req.query.address
-    if (!address) {
+    if (!req.query.address) {
         return res.send({
             error: 'You must provide an address'
         })
@@ -61,7 +60,7 @@ app.get('/weather', (req, res) => {
         }
 
         forecast(latitude, longitude, (err, forecastData) => {
-            if(err) {
+            if (err) {
                 return res.send({err})
             }
 
@@ -72,11 +71,6 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-    /*res.send({
-        geocode
-        forecast: 'It is rainy outside!',
-        location: 'Michigan',
-    })*/
 })
 
 
