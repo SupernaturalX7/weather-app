@@ -6,7 +6,7 @@ const geocode = require('../utils/geocode')
 
 
 const app = express()
-const port = process.argv[2] || 3000
+const port = process.env.PORT || 3000
 
 //Static paths for content
 const publicDirectoryPath = path.join(__dirname, '../public')

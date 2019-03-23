@@ -15,7 +15,7 @@ weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()
     //Extract input value from querySelector
     const location = search.value
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 errorResponse.textContent = data.error
